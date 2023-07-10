@@ -1,11 +1,20 @@
-  import React from "react";
+import React from "react";
+import user from "../images/user.jpg"
 
-  const ContactList = () => {
-    return (
-        <div className="ui called list">
-            Contact List
-        </div>
-    )
-  }
+const ContactCard = (props) => {
+  const {id, name, email} = props.contact;
+  return (
+    <div className="item">
+      <img className="ui avatar image" style={{marginTop:"4px"}} src={user} alt="user" />
+      <div className="content">
+        <div className="header">{name}</div>
+        <div>{email}</div>
+      </div>
+      <i 
+      className="trash alternate outline icon"
+      style={{ color:"red", marginTop:"7px", float:"right"}}></i>
+    </div>
+  );
+};
 
-  export default ContactList;
+export default ContactCard;
